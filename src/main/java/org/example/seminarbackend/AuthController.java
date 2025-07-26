@@ -20,6 +20,8 @@ public class AuthController {
 
     @PostMapping({"/auth", "/auth/"})
     public ResponseEntity<Map<String, String>> login(@RequestBody Map<String, String> credentials) {
+        System.out.println("로그인 컨트롤러 호출됨");
+
         String email = credentials.get("email");
         String password = credentials.get("password");
 
@@ -31,6 +33,9 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                     .body(Map.of("error", "Invalid credentials"));
         }
+
+
+
     }
 
 }
