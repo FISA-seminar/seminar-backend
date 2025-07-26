@@ -28,7 +28,7 @@ public class AuthController {
         Optional<User> user = userRepository.findByEmailAndPassword(email, password);
 
         if (user.isPresent()) {
-            return ResponseEntity.ok(Map.of("serviceUrl", "http://localhost:3001")); // JSON 형태
+            return ResponseEntity.ok(Map.of("serviceUrl", "http://localhost:8080/service/test")); // JSON 형태
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                     .body(Map.of("error", "Invalid credentials"));
