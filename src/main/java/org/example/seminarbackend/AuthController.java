@@ -39,7 +39,7 @@ public class AuthController {
             String token = Jwts.builder()
                     .setSubject(email)
                     .setIssuedAt(new Date())
-                    .setExpiration(new Date(System.currentTimeMillis() + 10_000)) // 실제론 1시간(3600000)
+                    .setExpiration(new Date(System.currentTimeMillis() + 20_000)) // 실제론 1시간(3600000)
                     .signWith(SECRET_KEY, SignatureAlgorithm.HS256)
                     .compact();
 
